@@ -11,7 +11,7 @@ RUN pip install waitress
 
 RUN rm requirements.txt
 
-ADD ./TimeSquirrel/startup.sh .
+ADD ./application/startup.sh .
 RUN chmod +x ./startup.sh
 
 VOLUME /usr/src/instance

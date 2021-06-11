@@ -499,3 +499,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# local prod environment stuff
+/data
