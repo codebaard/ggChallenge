@@ -8,6 +8,15 @@
 </head>
 
 <title>
-    <h2>Containered Flask Webapp Template</h2>
+    GoodGame Challenge
 </title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<section>
+    <h1>Goodgame Coding Challenge</h1>
+    <p>call /troops?[query] to get a random distribution of troops</p>
+    <p>possible query parameters are:</p>
+    <p>?amount=X, where X denotes the size of the desired army, defaults to 100. Only integers between 3 and 65535 allowed.</p>
+    <p>?dist=Y, where Y denotes the algorithm which determines the probability distribution. Allowed values are gaussian or flat. Defaults to gaussian.</p>
+    <p>An example query might look like: /troops?amount=4711&dist=flat</p>
+</section>
