@@ -31,6 +31,9 @@ def create_app(test_config=None):
     app.register_blueprint(indexHandler.bp)
     app.add_url_rule('/', endpoint='index')
 
+    from . import apiHandler
+    app.register_blueprint(apiHandler.bp)
+
     from . import errorHandler as error
     app.register_error_handler(404, error.handle_404)
 
