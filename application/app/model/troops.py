@@ -1,6 +1,5 @@
-import json
-from JSONable import JSONable
-from app.functions import randomNumberProvider as rnd
+import application.app.functions.randomNumberProvider as rnd
+from application.app.model.JSONable import JSONable
 
 class Army(JSONable):
 
@@ -8,14 +7,23 @@ class Army(JSONable):
         self.total = totalSize
         self.troops = {}
 
-    def populate(func):
+    def populate(self, func):
+        spr = Troop("spearmen", 0)
+        swd = Troop("swordsmen", 0)
+        arc = Troop("archers", 0)
+
+        print(spr.name)
+
         if func == 'flat':
-            rnd.ggRand()
+            spr.count, swd.count, arc.count = rnd.ggRand(self.total)
         else:
-            rnd.ggRandn()
+            spr.count, swd.count, arc.count = rnd.ggRandn(50 ,self.total)
+
+        self.troops = [spr, swd, arc]
         
 
 class Troop(JSONable):
     def __init__(self, name, count):
-        self.count = 0
         self.name = ""
+        self.count = 0
+

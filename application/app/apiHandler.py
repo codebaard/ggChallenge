@@ -2,10 +2,10 @@ from application.app.model.troops import Army
 from application.app.errorHandler import handle_400
 
 from flask import (
-    Blueprint, render_template, jsonify, request
+    Blueprint, render_template, jsonify, request, make_response
 )
 
-bp = Blueprint('landing', __name__)
+bp = Blueprint('api', __name__)
 
 @bp.route('/troops')
 def renderJSON():
@@ -22,4 +22,7 @@ def renderJSON():
     army = Army(size)
     army.populate(func)
 
-    return jsonify(army)
+    resp = make_response(army.toJSON())
+    resp.mimetype = 'application/json'
+
+    return resp
