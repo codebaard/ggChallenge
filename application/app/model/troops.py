@@ -1,5 +1,5 @@
-import application.app.functions.randomNumberProvider as rnd
-from application.app.model.JSONable import JSONable
+import functions.randomNumberProvider as rnd
+from model.JSONable import JSONable
 
 class Army(JSONable):
 
