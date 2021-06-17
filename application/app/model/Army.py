@@ -10,7 +10,7 @@ class Army(JSONable):
         self.troops = []
 
     def populate(self):
-        rnd = randomNumberProvider(self.total)
+        rnd = randomNumberProvider(self.total, len(GameSettings.serviceBranches))
         for branch in GameSettings.serviceBranches:
             self.troops.append(Troop(branch, rnd.ggRand()))
 
