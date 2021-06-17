@@ -1,5 +1,5 @@
-from model.troops import Army
-from errorHandler import handle_400
+from app.model.troops import Army
+from app.errorHandler import handle_400
 
 from flask import (
     Blueprint, render_template, jsonify, request, make_response
