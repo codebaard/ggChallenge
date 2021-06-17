@@ -1,9 +1,12 @@
-def ggRand(max):
-    """ provides a random number between 1 and max """
+import os
+import random
 
-    return (20, 30, 50)
+class randomNumberProvider:
+    def __init__(self, total):
+        random.seed(os.urandom(10))
+        self.total = total
 
-def ggRandn(med, max):
-    """ provides a random number between 1 and max with a normal distributed likelyhood around med """
-
-    return 20, 30, 50
+    def ggRand(self):
+        """ provides a random number between min and max """
+        #random.randint(min, max)
+        return 42

@@ -1,4 +1,4 @@
-from app.model.troops import Army
+from app.model.Army import Army
 from app.errorHandler import handle_400
 
 from flask import (
@@ -11,16 +11,14 @@ bp = Blueprint('api', __name__)
 def renderJSON():
 
     size = 100
-    func = 'gaussian'
 
     try:
         size = request.args.get('size')
-        func = request.args.get('func')
     except:
-        handle_400("no such query parameter")
+        handle_400("something bad happened")
 
     army = Army(size)
-    army.populate(func)
+    army.populate()
 
     resp = make_response(army.toJSON())
     resp.mimetype = 'application/json'
