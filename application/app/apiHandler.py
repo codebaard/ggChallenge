@@ -15,7 +15,6 @@ def renderJSON():
         army.populate()
         resp = make_response(army.toJSON())
         resp.mimetype = 'application/json'
-        #resp.status = 200
 
         return resp,200
 
