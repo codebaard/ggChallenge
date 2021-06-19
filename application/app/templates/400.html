@@ -4,12 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Time registration webapp">
-    <meta name="author" content="JuliusNeudecker">    
+    <meta name="author" content="JuliusNeudecker">
+    <title>Error 400</title>
 </head>
 
-<title>Error 404</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
 <section>
-    <h1>Error 400 - You didnt use the correct synthax. Refer to <a href=\"/\">home</a> for more info :-)</h1>
+    <h1>{{ message }}</h1>
+    <p> Refer to <a href=/>home</a> for more info :-)</p>
 </section>

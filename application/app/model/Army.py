@@ -6,15 +6,13 @@ from app.functions.randomNumberProvider import randomNumberProvider
 class Army(JSONable):
     def __init__(self, totalSize):
         super().__init__()
-        self.total = totalSize
+        self.total = int(totalSize)
         self.troops = []
 
     def populate(self):
         rnd = randomNumberProvider(self.total, len(GameSettings.serviceBranches))
         for branch in GameSettings.serviceBranches:
             self.troops.append(Troop(branch, rnd.ggRand()))
-
-        #print(self.troops)
 
 
 

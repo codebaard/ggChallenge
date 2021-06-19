@@ -36,5 +36,6 @@ def create_app(test_config=None):
 
     from . import errorHandler as error
     app.register_error_handler(404, error.handle_404)
+    app.register_error_handler(400, error.handle_400)
 
     return app

@@ -1,9 +1,21 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    make_response
 )
 
+from app.model.Error import Error
+
 def handle_400(e):
-    return render_template('400.html')
+    err = Error(400, e)
+    resp = make_response(err.toJSON())
+    resp.mimetype = 'application/json'
+    resp.status = 400
+
+    return resp
 
 def handle_404(e):
-    return render_template('404.html')
+    err = Error(404, e)
+    resp = make_response(err.toJSON())
+    resp.mimetype = 'application/json'
+    resp.status = 404
+
+    return resp

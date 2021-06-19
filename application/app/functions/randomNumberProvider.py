@@ -11,8 +11,14 @@ class randomNumberProvider:
         """ provides a random number between min and max """
         if self.total < self.unitTypeCount:
             raise Exception("Your desired army is smaller than the number of service branches.")
-
-        result = random.randint(self.unitTypeCount, self.total)
-        self.total -= result
-        self.unitTypeCount -= 1
-        return result
+        if self.unitTypeCount == 1:
+            return self.total
+        if self.unitTypeCount == self.total:
+            self.total -= 1
+            self.unitTypeCount -= 1
+            return 1
+        else:
+            result = random.randint(1, self.total-self.unitTypeCount+1)
+            self.total -= result
+            self.unitTypeCount -= 1
+            return result
