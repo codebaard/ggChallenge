@@ -8,4 +8,4 @@ bp = Blueprint('landing', __name__)
 
 @bp.route('/')
 def index():
-    return render_template('index.html', branches = GameSettings.serviceBranches)
+    return render_template('index.html', branches = len(GameSettings.serviceBranches))
