@@ -8,14 +8,14 @@ def handle_400(e):
     err = Error(400, e)
     resp = make_response(err.toJSON())
     resp.mimetype = 'application/json'
-    resp.status = 400
+    #resp.status = 400
 
-    return resp
+    return resp,400
 
 def handle_404(e):
     err = Error(404, e)
     resp = make_response(err.toJSON())
     resp.mimetype = 'application/json'
-    resp.status = 404
+    #resp.status = 404
 
-    return resp
+    return resp,404

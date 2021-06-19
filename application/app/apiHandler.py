@@ -17,7 +17,7 @@ def renderJSON():
         resp.mimetype = 'application/json'
         #resp.status = 200
 
-        return resp
+        return resp,200
 
     except Exception as e:
         abort(400, e)
