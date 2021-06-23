@@ -3,7 +3,7 @@ import random
 
 class randomNumberProvider:
     def __init__(self, total, unitTypeCount):
-        random.seed(os.urandom(10))
+        random.seed(os.urandom(16))
         self.total = total
         self.unitTypeCount = unitTypeCount
 
