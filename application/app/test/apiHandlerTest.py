@@ -18,6 +18,8 @@ class apiHandlerTest(unittest.TestCase):
         assert json.get('total') == 3
         assert len(json.get('troops')) == 3
         assert json.get('troops')[0].get('count') == 1
+        assert json.get('troops')[1].get('count') == 1
+        assert json.get('troops')[2].get('count') == 1
 
     def test_checkBadRequst(self):
         response = requests.get('https://gg.juliusneudecker.com/troops?size=2')

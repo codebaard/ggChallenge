@@ -1,7 +1,5 @@
 import unittest
 from app.model.Army import Army
-from unittest.mock import MagicMock
-from app.functions.randomNumberProvider import randomNumberProvider
 from app.model.Troop import Troop
 
 class ArmyTest(unittest.TestCase):
