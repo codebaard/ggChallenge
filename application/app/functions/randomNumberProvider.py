@@ -11,6 +11,8 @@ class randomNumberProvider:
         """ provides a random number between min and max """
         if self.total < self.unitTypeCount:
             raise Exception("Your desired army is smaller than the number of service branches.")
+        if self.unitTypeCount == 0:
+            raise Exception("Random numbers starved.")
         if self.unitTypeCount == 1:
             return self.total
         if self.unitTypeCount == self.total:
