@@ -9,6 +9,11 @@ bp = Blueprint('api', __name__)
 
 @bp.route('/troops')
 def renderJSON():
+    """
+        This function fetches the size attribute from the GET-request of the user and creates
+        an army according to the given parameter. This is subsequently parsed to json
+        and sent back to the user as response.
+    """
     try:
         size = request.args.get('size')
         army = Army(size)
