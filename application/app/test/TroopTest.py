@@ -1,7 +1,7 @@
 import unittest
 from app.model.Troop import Troop
 
-class MyTestCase(unittest.TestCase):
+class TroopTest(unittest.TestCase):
     def test_CorrectInitialization(self):
         testTroop = Troop("Test", 10)
         self.assertEqual(testTroop.name, "Test")
