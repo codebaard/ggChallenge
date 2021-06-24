@@ -2,24 +2,11 @@ version: '3.4'
 
 services:
   frontend:
-    image: ${SERVER}/ggchallenge:${TAG}
+    image: ggchallenge
     restart: always
     container_name: gg
     environment:
       FLASK_APP: ${F_APP}
       FLASK_ENV: ${F_ENV}
-      VIRTUAL_HOST: ${V_HOST}
-      VIRTUAL_PORT: ${V_PORT}
-      LETSENCRYPT_HOST: ${LE_HOST}
-      LETSENCRYPT_EMAIL: ${LE_EMAIL}
-    volumes:
-      - ${INSTANCE_PATH}:/usr/src/instance
-    expose:
-      - "8080"
-    networks:
-      - proxy
-      
-networks:
-  proxy:
-    external:
-      name: nginx-proxy
+    ports:
+      - 8080:8080
